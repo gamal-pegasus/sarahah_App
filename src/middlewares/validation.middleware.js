@@ -1,9 +1,6 @@
 const reqKeys = ["body", "headers", "params", "query"];
 export const validationMiddleware = (schema) => {
-
   return (req, res, next) => {
-    console.log({ originalname:req.file.originalname});
-    
     const validationError = [];
     for (let key of reqKeys) {
       if (schema[key]) {
